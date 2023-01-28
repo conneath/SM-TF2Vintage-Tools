@@ -4,14 +4,14 @@
 
 #pragma newdecls required
 #pragma semicolon 1
-#include <tf2c>
+#include <tf2v>
 
 #define PLUGIN_VERSION 		"1.0.1"
 
 public Plugin myinfo =  {
-	name = "TF2 Classic Tools", 
-	author = "Scag", 
-	description = "TF2 Classic natives and forwards for SourceMod", 
+	name = "TF2 Vintage Tools", 
+	author = "Original work by Scag, TF2V version by conneath", 
+	description = "TF2 Vintage natives and forwards for SourceMod", 
 	version = PLUGIN_VERSION, 
 	url = ""
 };
@@ -99,9 +99,9 @@ public void OnPluginStart()
 
 void WaitAFrame()
 {
-	GameData conf = LoadGameConfigFile("tf2c");
+	GameData conf = LoadGameConfigFile("tf2v");
 	if (!conf)	// Dies anyway but w/e
-		SetFailState("Gamedata \"tf2classic/addons/sourcemod/gamedata/tf2c.txt\" does not exist.");
+		SetFailState("Gamedata \"tf2vintage/addons/sourcemod/gamedata/tf2v.txt\" does not exist.");
 
 	// Burn
 	StartPrepSDKCall(SDKCall_Raw);
@@ -251,7 +251,7 @@ void WaitAFrame()
 	g_Bullshit1 = new ArrayStack(sizeof(CondShit));
 	g_Bullshit2 = new ArrayStack(sizeof(CondShit));
 
-	PrintToServer("TF2Classic-Tools loaded!");
+	PrintToServer("TF2Vintage-Tools loaded!");
 }
 
 public void OnClientPutInServer(int client)
@@ -507,7 +507,7 @@ public APLRes AskPluginLoad2(Handle self, bool late, char[] error, int max)
 	hOnWaitingForPlayersStart = new GlobalForward("TF2_OnWaitingForPlayersStart", ET_Ignore);
 	hOnWaitingForPlayersEnd = new GlobalForward("TF2_OnWaitingForPlayersEnd", ET_Ignore);
 
-	RegPluginLibrary("tf2c");
+	RegPluginLibrary("tf2v");
 	return APLRes_Success;
 }
 

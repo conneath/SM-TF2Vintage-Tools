@@ -1,10 +1,10 @@
-#if defined _tf2c_included
+#if defined _tf2v_included
 	#endinput
 #endif
-#define _tf2c_included
+#define _tf2v_included
 
 #if defined _tf2_included
-	#error You cannot have both TF2 and TF2Classic includes included in your plugin
+	#error You cannot have both TF2 and TF2Vintage includes included in your plugin
 #endif
 
 // We're overriding this shit
@@ -35,8 +35,7 @@ enum TFClassType
 	TFClass_Heavy,
 	TFClass_Pyro,
 	TFClass_Spy,
-	TFClass_Engineer,
-	TFClass_Civilian	// I guess?
+	TFClass_Engineer
 };
 
 enum TFTeam
@@ -45,8 +44,6 @@ enum TFTeam
 	TFTeam_Spectator = 1,
 	TFTeam_Red = 2,
 	TFTeam_Blue = 3,
-	TFTeam_Green,
-	TFTeam_Yellow,
 
 	TFTeam_COUNT
 };
@@ -829,10 +826,10 @@ forward Action TF2_OnPlayerTeleport(int client, int teleporter, bool &result);
 forward void TF2_OnWaitingForPlayersStart();
 forward void TF2_OnWaitingForPlayersEnd();
 
-public SharedPlugin __pl_tf2c =
+public SharedPlugin __pl_tf2v =
 {
-	name = "tf2c",
-	file = "tf2c.smx",
+	name = "tf2v",
+	file = "tf2v.smx",
 #if defined REQUIRE_PLUGIN
 	required = 1,
 #else
@@ -841,7 +838,7 @@ public SharedPlugin __pl_tf2c =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __pl_tf2c_SetNTVOptional()
+public void __pl_tf2v_SetNTVOptional()
 {
 	MarkNativeAsOptional("TF2_IgnitePlayer");
 	MarkNativeAsOptional("TF2_RespawnPlayer");

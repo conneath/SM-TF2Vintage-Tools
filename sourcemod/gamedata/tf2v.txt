@@ -1,6 +1,6 @@
 "Games"
 {
-	"tf2classic"
+	"tf2vintage"
 	{
 		"Offsets"
 		{
@@ -10,21 +10,14 @@
 			// I'm - 2 from that
 			"ForceRespawn"
 			{
-				"windows"	"326"
-				"linux"		"327"
+				"windows"	"334"
+				"linux"		"335"
 			}
 			// "RandomCritRapid"
 			"CalcIsAttackCriticalHelper"
 			{
-				"windows"	"389"
-				"linux"		"394"
-			}
-			// + 1 from CalcIsAttackCriticalHelper
-			// This is ::CanFireRandomCrit
-			"CalcIsAttackCriticalHelperNoCrits"
-			{
-				"windows"	"390"
-				"linux"		"395"
+				"windows"	"386"
+				"linux"		"392"
 			}
 		}
 		"Signatures"
@@ -102,12 +95,12 @@
 			}
 			// Same as above re: offsets...
 			// CTFWeaponBase::CanFireRandomCrit
-			"CalcIsAttackCriticalHelperNoCrits"
+			/*"CalcIsAttackCriticalHelperNoCrits"
 			{
 				"library"	"server"
 				"windows"	"@?CanFireRandomCrit@CTFWeaponBase@@UAE_NXZ"
 				"linux"		"@_ZN13CTFWeaponBase17CanFireRandomCritEv"
-			}
+			}*/
 		}
 	}
 }
